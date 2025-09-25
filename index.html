@@ -104,7 +104,6 @@
             </div>
         </div>
 
-        <!-- Tombol See More -->
         <div class="see-more">
             <a href="projects.html" class="btn">See More Projects →</a>
         </div>
@@ -136,9 +135,7 @@
   </div>
 </div>
 
-<!-- ------------------ Script ------------------ -->
 <script>
-    // Tabs
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
 
@@ -153,15 +150,13 @@
         document.getElementById(tabname).classList.add("active-tab");
     }
 
-    // Toggle navbar menu
     function toggleMenu(){
         const navMenu = document.getElementById("navMenu");
         const menuToggle = document.getElementById("menuToggle");
         navMenu.classList.toggle("show");
-        menuToggle.classList.toggle("active"); // animasi burger
+        menuToggle.classList.toggle("active");
     }
 
-    // Tutup menu setelah klik link
     const navLinks = document.querySelectorAll("#navMenu li a");
     navLinks.forEach(link => {
         link.addEventListener("click", () => {
@@ -172,7 +167,6 @@
         });
     });
 
-    // Tutup menu kalau klik area luar
     document.addEventListener("click", (e) => {
         const navMenu = document.getElementById("navMenu");
         const menuToggle = document.getElementById("menuToggle");
