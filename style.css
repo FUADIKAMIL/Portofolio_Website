@@ -1,0 +1,465 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    scrollbar-width: none;
+}
+
+body{
+    background: #000000;
+    color: #fff;
+}
+
+/* ------------------ HEADER ------------------ */
+#header{
+    height: 100vh;
+    background-image: url(images/dxh2.jpg);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.container{
+    padding: 10px 10%;
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 10%;
+    z-index: 1000;
+}
+
+nav{
+    padding: 5px 5%; /* dari 10% jadi 5% */
+}
+
+.logo{
+    width: 120px;
+    margin: 0 -3%;
+    cursor: pointer;
+}
+
+nav ul{
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{
+    content: ' ';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.menu-toggle{
+    display: none; /* default hidden */
+    font-size: 28px;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Header text */
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-text h1 span{
+    color: rgba(255,0,0,255);
+}
+
+/* ------------------ ABOUT ------------------ */
+#about{
+    padding: 100px 0;
+    color: #ababab;
+}
+
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1{
+    flex-basis: 35%;
+}
+
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+    transition: transform 0.3s;
+}
+
+.about-col-1 img:hover{
+    transform: scale(1.05);
+}
+
+.about-col-2{
+    flex-basis: 60%;
+}
+
+.sub-title{
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.about-text{
+    padding-right: 35px;
+    font-size: large;
+    text-align: justify;
+}
+
+/* Tabs */
+.tab-titles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+
+.tab-links{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after{
+    content: ' ';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+    width: 100%;
+}
+
+.tab-contents{
+    display: none;
+    text-align: center;
+}
+
+.tab-contents.active-tab{
+    display: block;
+}
+
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span{
+    color: #b54769;
+    font-size: 14px;
+}
+
+/* ------------------ PROJECT ------------------ */
+#project{
+    padding: 100px 0;
+    background: #000000;
+    color: #fff;
+}
+
+.project-list{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.project-card{
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card img{
+    width: 100%;
+    border-radius: 15px;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.project-card:hover img{
+    transform: scale(1.1);
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+    border-radius: 15px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    transition: height 0.5s ease;
+    display: flex;               /* biar gampang align */
+    flex-direction: column;      /* text ditumpuk */
+    justify-content: center;     /* center vertikal */
+    align-items: center;         /* center horizontal */
+    text-align: center;          /* biar rata tengah */
+    padding: 20px;
+    opacity: 0;                  /* awalnya hidden */
+    transition: all 0.5s ease;
+}
+
+.project-card:hover .layer {
+    height: 100%;
+    opacity: 1;                  /* fade-in pas hover */
+}
+
+.layer h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #fff;
+    animation: fadeInUp 0.5s ease;
+}
+
+.layer p {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #f1f1f1;
+    max-width: 90%;
+    animation: fadeInUp 0.7s ease;
+}
+
+/* Animasi smooth naik ke atas */
+@keyframes fadeInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.project-card:hover .layer{
+    height: 100%;
+}
+
+.layer h3{
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+/* Tombol See More */
+.see-more {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.see-more .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #ff004f;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.see-more .btn:hover {
+    background: #e60045;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(255, 0, 79, 0.4);
+}
+
+/* ------------------ CONTACT ------------------ */
+#contact{
+    padding: 100px 0;
+    text-align: center;
+    background: #000;
+    color: #fff;
+}
+
+.social-icons.circle {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.social-icons.circle a {
+    width: 50px;
+    height: 50px;
+    background: #111;
+    border: 2px solid #ff004f;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 22px;
+    transition: all 0.3s ease;
+}
+
+.social-icons.circle a:hover {
+    background: #ff004f;
+    color: #fff;
+    transform: translateY(-4px) scale(1.1);
+    box-shadow: 0 4px 12px rgba(255, 0, 79, 0.5);
+}
+
+/* ------------------ RESPONSIVE ------------------ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .header-text h1{
+        font-size: 45px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+        text-align: center;
+    }
+    .about-col-1 img{
+        max-width: 70%;
+        margin-bottom: 20px;
+    }
+    .about-text{
+        padding: 0;
+    }
+    .about-col-2{
+        align-items: center;
+    }
+    .tab-contents{
+        text-align: left;
+    }
+    .tab-links.active-link::after{
+    width: 100%;
+    } 
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .logo{
+    width: 90px;
+    margin: 0 -3%;
+    cursor: pointer;
+    }
+    nav ul{
+        position: fixed;
+        top: -70%;
+        right: -100%;
+        width: 210px;
+        height: 180%;
+        background: rgba(0,0,0,0.80);
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.4s ease;
+        box-shadow: -5px 0 15px rgba(255,0,0,0.6);
+        padding-left: 5%;
+        backdrop-filter: blur(1.5px);
+    }
+    nav ul.show{
+        right: 0;
+        animation: fadeIn 0.5s ease;
+    }
+
+    .menu-toggle {
+        display: flex; /* tampilkan burger di mobile */
+        flex-direction: column;
+        justify-content: space-between;
+        width: 23px;
+        height: 16px;
+        cursor: pointer;
+        z-index: 1100;
+    }
+    .menu-toggle span {
+        display: block;
+        height: 3px;
+        width: 100%;
+        background: #fff;
+        border-radius: 5px;
+        transition: all 1s ease;
+    }
+    /* .menu-toggle.active{
+        margin-right: 36%;
+        transition: all 0.4s ease;
+    } */
+    /* Animasi burger -> X */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translateY(9.3px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translateY(-9.3px);
+    }
+
+    .header-text{
+        margin-top: 40%;
+        text-align: center;
+    }
+    .header-text h1{
+        font-size: 35px;
+    }
+
+    .row{
+        flex-direction: column;
+    }
+    .about-col-1 img{
+        max-width: 90%;
+    }
+
+    .project-list{
+        grid-template-columns: 1fr;
+    }
+
+    .sub-title{
+        font-size: 35px;
+    }
+    .tab-contents{
+        text-align: left;
+    }
+}
+
+/* Animasi fade */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+

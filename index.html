@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portofolio - Anon</title>
+    <link rel="stylesheet" href="style.css">
+ </head>
+<body>
+<!-- ------------------ Header ------------------ -->
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logow.png" class="logo" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">
+            <ul class="box" id="navMenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+            </div>
+        </nav>
+        <div class="header-text">
+            <p>UI/UX Deisgner</p>
+            <h1>Hi, I'm <span>Anon</span><br>From Jember Utara</h1>
+        </div>
+    </div>
+</div>
+
+<!-- ------------------ About ------------------ -->
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/profile.png" alt="profile">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p class="about-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Phasellus fringilla, lectus et finibus bibendum, ipsum lectus tempor tortor, ac venenatis dui nisl eget sapien. Donec vitae massa tristique, venenatis sem vel, finibus metus.
+                    Aenean vitae velit eu sapien tempor blandit eu a ante. Suspendisse vitae nibh nec lorem dignissim placerat vitae nec quam.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills', event)">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience', event)">Experience</p>
+                    <p class="tab-links" onclick="opentab('educations', event)">Educations</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                        <li><span>Web Development</span><br>Web app Development</li>
+                        <li><span>App Development</span><br>Building Android/IOS Apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="experience">
+                    <ul>
+                        <li><span>UI/UX</span><br>Designing Web/App Interfaces</li>
+                        <li><span>Web Development</span><br>Web app Development</li>
+                        <li><span>App Development</span><br>Building Android/IOS Apps</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id="educations">
+                    <ul>
+                        <li><span>SMA</span><br>Bws</li>
+                        <li><span>Kuliah</span><br>Pernah kuliah di UIN</li>
+                        <li><span>Kuliah Lagi</span><br>Sekarang di UNET</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ------------------ Project ------------------ -->
+<div id="project">
+    <div class="container">
+        <h1 class="sub-title">My Projects</h1>
+        <div class="project-list">
+            <div class="project-card">
+                <img src="images/locked.jpg" alt="Project 1">
+                <div class="layer">
+                    <h3>Portfolio Website</h3>
+                    <p>Personal website showcasing my skills and works.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="images/locked.jpg" alt="Project 2">
+                <div class="layer">
+                    <h3>Mobile App</h3>
+                    <p>Prototype and development of mobile applications.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="images/locked.jpg" alt="Project 3">
+                <div class="layer">
+                    <h3>UI/UX Design</h3>
+                    <p>Creative user interfaces and prototypes for apps.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tombol See More -->
+        <div class="see-more">
+            <a href="projects.html" class="btn">See More Projects →</a>
+        </div>
+    </div>
+</div>
+
+<!-- ------------------ Contact ------------------ -->
+<div id="contact">
+  <div class="container">
+    <h1 class="sub-title">Contact Me!</h1>
+    <p>Let's connect on my social media</p>
+    <div class="social-icons circle">
+        <a href="mailto:fuadikamil45@gmail.com" target="_blank">
+            <img src="images/email.svg" width="28" alt="Email">
+        </a>
+        <a href="https://github.com/FUADIKAMIL" target="_blank">
+            <img src="images/github.svg" width="28" alt="Email">
+        </a>
+        <a href="https://www.linkedin.com/in/muhammad-fuadi-kamil-301262330/" target="_blank">
+            <img src="images/linkedin.svg" width="28" alt="LinkedIn">
+        </a>
+        <a href="https://www.instagram.com/notyourpreppyfriend/" target="_blank">
+            <img src="images/instagram.svg" width="28" alt="Instagram">
+        </a>
+        <a href="https://discord.com/channels/@anonicotine" target="_blank">
+            <img src="images/discord.svg" width="28" alt="Discord">
+        </a>
+    </div>
+  </div>
+</div>
+
+<!-- ------------------ Script ------------------ -->
+<script>
+    // Tabs
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname, event){
+        for(let tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(let tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+    // Toggle navbar menu
+    function toggleMenu(){
+        const navMenu = document.getElementById("navMenu");
+        const menuToggle = document.getElementById("menuToggle");
+        navMenu.classList.toggle("show");
+        menuToggle.classList.toggle("active"); // animasi burger
+    }
+
+    // Tutup menu setelah klik link
+    const navLinks = document.querySelectorAll("#navMenu li a");
+    navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+            const navMenu = document.getElementById("navMenu");
+            const menuToggle = document.getElementById("menuToggle");
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("active");
+        });
+    });
+
+    // Tutup menu kalau klik area luar
+    document.addEventListener("click", (e) => {
+        const navMenu = document.getElementById("navMenu");
+        const menuToggle = document.getElementById("menuToggle");
+        if (navMenu.classList.contains("show") && 
+            !navMenu.contains(e.target) && 
+            !menuToggle.contains(e.target)) {
+            navMenu.classList.remove("show");
+            menuToggle.classList.remove("active");
+        }
+    });
+</script>
+</body>
+</html>
